@@ -2,8 +2,8 @@
   <q-page class="q-px-sm">
     <transition
       appear
-      enter-active-class="animated fadeInUp"
-      leave-active-class="animated fadeOutUp"
+      enter-active-class="animated fadeIn"
+      leave-active-class="animated fadeOut"
     >
       <div class="row">
         <div class="col-12">
@@ -135,5 +135,8 @@ export default {
 <style>
 #symbol {
   display: none;
+}
+body {
+  overflow-x: hidden;
 }
 </style>

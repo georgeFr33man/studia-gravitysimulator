@@ -7,7 +7,7 @@ export default {
     initial: "Warunki początkowe",
     placing: "Położenie [km]",
     radius: "Promień",
-    mass: "Masa [x * 1.5^19kg]",
+    mass: "Masa [x * 1.5 * 10^19 kg]",
     speed: "Prędkość początkowa [km/s]",
     simulate: "Rozpocznij symulację!",
     stopSimulate: "Zatrzymaj",

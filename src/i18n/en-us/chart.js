@@ -7,7 +7,7 @@ export default {
     initial: "Initial arguments",
     placing: "Location [km]",
     radius: "Radius",
-    mass: "Mass [x * 1.5^19kg]",
+    mass: "Mass [x * 1.5 * 10^19 kg]",
     speed: "Start speed [km/s]",
     simulate: "Start simulation!",
     stopSimulate: "Stop",
