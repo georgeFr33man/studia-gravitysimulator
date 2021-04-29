@@ -4,7 +4,12 @@ const routes = [
     component: () => import('layouts/MainLayout.vue'),
     children: [
       {name: 'home', path: '', component: _ => import('pages/Index.vue')},
-      {name: 'simulator', path: '/simulator/:type', component: _ => import('pages/Simulation.vue')}
+      {
+        name: 'simulator',
+        path: '/simulator/:simulationType',
+        props: (route) => ({...route.params}),
+        component: _ => import('pages/Simulation.vue')
+      }
     ],
   },
 

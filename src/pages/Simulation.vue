@@ -50,6 +50,7 @@
 
 <script>
 import {Plotly} from 'vue-plotly';
+import Presets from 'src/models/Presets';
 import ChartForm from 'components/forms/chart-form/chartForm';
 
 export default {
@@ -59,8 +60,11 @@ export default {
     Plotly,
   },
   created() {
+    console.log("test", Presets[this.simulationType]);
     this.plotLayout = this.$pth.mergeThemes(this.plotLayout, this.$pth.getTheme(this.$q.dark.isActive));
-    this.preset = this.$route.params.type;
+    if (this.simulationType !== undefined) {
+      this.preset = Presets[this.simulationType];
+    }
   },
   data() {
     return {
@@ -76,6 +80,7 @@ export default {
       preset: undefined,
       simulationSpeed: 10,
       historyLength: 10,
+
     };
   },
   watch: {
@@ -137,6 +142,12 @@ export default {
     },
     togglePause(e) {
       this.pause = e.pause;
+    },
+  },
+  props:{
+    simulationType: {
+      type: String,
+      default: undefined
     },
   },
 };

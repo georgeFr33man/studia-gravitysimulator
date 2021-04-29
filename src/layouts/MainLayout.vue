@@ -38,7 +38,7 @@ export default {
   },
   methods: {
     toggleToolbar(scroll) {
-      this.toolbar = scroll < 80;
+      this.toolbar = scroll < 10;
     },
   },
 };
