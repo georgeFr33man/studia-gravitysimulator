@@ -16,7 +16,7 @@ export default {
     },
   },
   twoStars: {
-    name: "twoStar",
+    name: "twoStars",
       object1: {
       mass: 132600000000,
         speed: 23.94,

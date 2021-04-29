@@ -1,5 +1,5 @@
 export default {
-  name: "Graph of the gravity system of two celestial body",
+  name: "Graph of the gravity system of two celestial bodies",
   selectPreset: "Choose type of simulation",
   form: {
     first: "First object",
