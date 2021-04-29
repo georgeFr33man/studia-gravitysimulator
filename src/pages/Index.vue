@@ -23,6 +23,11 @@
         </transition>
       </div>
     </div>
+    <div class="row fixed-bottom q-mb-md">
+      <div class="col-12 text-center text-body2 text-weight-light">
+        {{ $t("app.credits") }}
+      </div>
+    </div>
   </q-page>
 </template>
 

@@ -1,6 +1,7 @@
 export default {
   appName: "Gravity Simulation",
   presetSelectionText: "Choose type of simulation",
+  credits: "Authors: Michał Ryngier PGK2, Mateusz Klimaszewski PGK2",
   settings: {
     title: "Settings",
     darkTheme: "Dark mode",
