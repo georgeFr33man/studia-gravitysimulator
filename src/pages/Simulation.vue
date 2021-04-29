@@ -82,6 +82,10 @@ export default {
     dark(newVal, oldVal) {
       this.performThemeToggle();
     },
+    lang(newVal, oldVal) {
+      this.plotLayout.title.text = this.$t('chart.name');
+      this.updatePlot();
+    },
     preset(newVal, oldVal) {
       if (oldVal === undefined && newVal !== undefined) {
         this.$refs['chartForm'].loadPreset(newVal);
@@ -92,6 +96,12 @@ export default {
     dark() {
       return this.$q.dark.isActive;
     },
+    lang() {
+      return this.$i18n.locale;
+    },
+    chartName() {
+      return this.$t('chart.name');
+    }
   },
   methods: {
     simulate(obj) {
