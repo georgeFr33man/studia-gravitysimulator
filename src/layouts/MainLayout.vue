@@ -1,9 +1,9 @@
 <template>
-  <q-layout view="hHh lpR lFr" v-scroll="toggleToolbar">
+  <q-layout view="hHh lpR lFr">
     <q-header class="bg-transparent">
       <!-- ELECTRON BAR -->
       <BarElectron />
-      <q-toolbar v-if="toolbar" class="bg-pink-9">
+      <q-toolbar class="bg-pink-9">
         <q-btn
           v-if="$route.fullPath !== '/'" to="/"
           size="md" flat
@@ -30,16 +30,6 @@ export default {
   components: {
     Settings,
     BarElectron,
-  },
-  data() {
-    return {
-      toolbar: true,
-    };
-  },
-  methods: {
-    toggleToolbar(scroll) {
-      this.toolbar = scroll < 10;
-    },
   },
 };
 </script>

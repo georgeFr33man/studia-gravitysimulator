@@ -60,10 +60,10 @@ export default {
     Plotly,
   },
   created() {
-    console.log("test", Presets[this.simulationType]);
     this.plotLayout = this.$pth.mergeThemes(this.plotLayout, this.$pth.getTheme(this.$q.dark.isActive));
     if (this.simulationType !== undefined) {
-      this.preset = Presets[this.simulationType];
+      let presets = JSON.parse(JSON.stringify(Presets));
+      this.preset = presets[this.simulationType];
     }
   },
   data() {

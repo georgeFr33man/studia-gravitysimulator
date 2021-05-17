@@ -19,7 +19,7 @@ export default {
   data: {
     object: "Object",
     vectorR: "Vector R",
-    vectorSM: "Vector SM",
+    vectorSM: "Vector CM",
     history: "Trace - Object"
   },
   presets: {

@@ -128,15 +128,22 @@ export class GravitySystem
   next(speed = 10, historyLength = 10) {
     // calculates next time step
     let calculated = this.engine.precalculate(speed);
-    this.addToHistory(calculated, speed, historyLength);
     this.spaceObjects.first.vector = new Victor(
       calculated[0].pos.x, calculated[0].pos.z);
     this.spaceObjects.second.vector = new Victor(
       calculated[1].pos.x, calculated[1].pos.z);
+    this.centerSystem();
+    this.addToHistory(speed, historyLength);
     return this.generate();
   }
 
-  addToHistory(calculated, speed, historyLength) {
+  centerSystem() {
+    let massCenterCopy = JSON.parse(JSON.stringify(this.massCenter));
+    this.spaceObjects.first.vector.addScalarY(Math.abs(massCenterCopy.y));
+    this.spaceObjects.second.vector.addScalarY(Math.abs(massCenterCopy.y));
+  }
+
+  addToHistory(speed, historyLength) {
     if (this.history.object1.x.length > (40 * historyLength - (speed * 8))) {
       this.history.object1.x.shift();
       this.history.object1.y.shift();
@@ -144,10 +151,10 @@ export class GravitySystem
       this.history.object2.y.shift();
 
     }
-    this.history.object1.x.push(calculated[0].pos.x);
-    this.history.object1.y.push(calculated[0].pos.z);
-    this.history.object2.x.push(calculated[1].pos.x);
-    this.history.object2.y.push(calculated[1].pos.z);
+    this.history.object1.x.push(this.spaceObjects.first.vector.x);
+    this.history.object1.y.push(this.spaceObjects.first.vector.y);
+    this.history.object2.x.push(this.spaceObjects.second.vector.x);
+    this.history.object2.y.push(this.spaceObjects.second.vector.y);
   }
 
   get massCenter() {
