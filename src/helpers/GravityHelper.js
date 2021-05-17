@@ -139,8 +139,13 @@ export class GravitySystem
 
   centerSystem() {
     let massCenterCopy = JSON.parse(JSON.stringify(this.massCenter));
-    this.spaceObjects.first.vector.addScalarY(Math.abs(massCenterCopy.y));
-    this.spaceObjects.second.vector.addScalarY(Math.abs(massCenterCopy.y));
+    if (massCenterCopy.y < 0) {
+      this.spaceObjects.first.vector.addScalarY(Math.abs(massCenterCopy.y));
+      this.spaceObjects.second.vector.addScalarY(Math.abs(massCenterCopy.y));
+    } else {
+      this.spaceObjects.first.vector.subtractScalarY(Math.abs(massCenterCopy.y));
+      this.spaceObjects.second.vector.subtractScalarY(Math.abs(massCenterCopy.y));
+    }
   }
 
   addToHistory(speed, historyLength) {
