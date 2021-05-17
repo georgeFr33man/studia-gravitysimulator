@@ -13,16 +13,17 @@ class SpaceObject
    * @param color {String}
    * @param name {String}
    */
-  constructor(x,
+  constructor(
+    x,
     y,
     mass,
     speed,
     size,
     radius,
     color,
-    name
+    name,
   ) {
-    this.vector = new Victor(x, y)
+    this.vector = new Victor(x, y);
     this.mass = mass;
     this.speed = speed;
     this.radius = radius;
@@ -45,8 +46,8 @@ class SpaceObject
         color: this.color,
         size: this.size,
         line: {
-          color: this.color
-        }
+          color: this.color,
+        },
       },
     };
   }
